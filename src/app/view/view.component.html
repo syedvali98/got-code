@@ -1,0 +1,76 @@
+<p class="text-muted text-center">Information</p>
+<!--Character View-->
+<div class="row">
+  <div class="col-md-4 col-sm-2"></div>
+  <div class="col-4" *ngIf="currentView.gender">
+    <div class="card" style="width: 24rem;">
+      <div class="card-body">
+        <h5 *ngIf="currentView.name" class="card-title">Name: {{currentView.name}}</h5>
+        <h6 *ngIf="currentView.gender" class="card-subtitle mb-2 text-muted">Gender: {{currentView.gender}}</h6>
+        <p *ngIf="currentView.culture" class="card-text">Culture: {{currentView.culture}}</p>
+        <p *ngIf="currentView.born" class="card-text">Born: {{currentView.born}}</p>
+        <p *ngIf="currentView.died" class="card-text">Died: {{currentView.died}}</p>
+        <p *ngIf="currentView.titles" class="card-text">Titles: {{currentView.titles}}</p>
+        <p *ngIf="currentView.aliases" class="card-text">Aliases: {{currentView.aliases}}</p>
+        <p *ngIf="currentView.father" class="card-text">Father: {{currentView.father}}</p>
+        <p *ngIf="currentView.mother" class="card-text">Mother: {{currentView.mother}}</p>
+        <p *ngIf="currentView.spouse" class="card-text">Spouse: {{currentView.spouse}}</p>
+        <p *ngIf="currentView.allegiances" class="card-text">Allegiances: {{currentView.allegiances}}</p>
+        <p *ngIf="currentView.books" class="card-text">Books: {{currentView.books}}</p>
+        <p *ngIf="currentView.povBooks" class="card-text">Featured Books: {{currentView.povBooks}}</p>
+        <p *ngIf="currentView.tvSeries" class="card-text">TV Series: {{currentView.tvSeries}}</p>
+        <p *ngIf="currentView.playedBy" class="card-text">Played By: {{currentView.playedBy}}</p>
+        <p class="text-muted">End of the Information</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--House View-->
+<div class="row">
+  <div class="col-md-4 col-sm-2"></div>
+  <div *ngIf="currentView.region" class="col-4">
+    <div class="card" style="width: 24rem;">
+      <div class="card-body">
+        <h5 *ngIf="currentView.name" class="card-title">Name: {{currentView.name}}</h5>
+        <h6 *ngIf="currentView.region" class="card-subtitle mb-2 text-muted">Region: {{currentView.region}}</h6>
+        <p *ngIf="currentView.coatOfArms" class="card-text">Coat of Arms: {{currentView.coatOfArms}}</p>
+        <p *ngIf="currentView.words" class="card-text">Words: {{currentView.words}}</p>
+        <p *ngIf="currentView.titles" class="card-text">Titles: {{currentView.titles}}</p>
+        <p *ngIf="currentView.seats" class="card-text">Seats: {{currentView.seats}}</p>
+        <p *ngIf="currentView.currentLord" class="card-text">Current Lord: {{currentView.currentLord}}</p>
+        <p *ngIf="currentView.heir" class="card-text">Heir: {{currentView.heir}}</p>
+        <p *ngIf="currentView.overlord" class="card-text">OverLord: {{currentView.overlord}}</p>
+        <p *ngIf="currentView.founded" class="card-text">Founded: {{currentView.founded}}</p>
+        <p *ngIf="currentView.founder" class="card-text">Founder: {{currentView.founder}}</p>
+        <p *ngIf="currentView.diedOut" class="card-text">Died Out: {{currentView.diedOut}}</p>
+        <p *ngIf="currentView.ancestralWeapons" class="card-text">Ancestral Weapons: {{currentView.ancestralWeapons}}</p>
+        <p *ngIf="currentView.cadetBranches" class="card-text">Cadet Branches: {{currentView.cadetBranches}}</p>
+        <p *ngIf="currentView.swornMembers" class="card-text">Sworn Members: {{currentView.swornMembers}}</p>
+        <p class="text-muted">End of the Information</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Book View-->
+<div class="row">
+  <div class="col-md-4 col-sm-2"></div>
+  <div *ngIf="currentView.publisher" class="col-4">
+    <div class="card" style="width: 24rem;">
+      <div class="card-body">
+        <h5 *ngIf="currentView.name" class="card-title">Name: {{currentView.name}}</h5>
+        <h6 *ngIf="currentView.isbn" class="card-subtitle mb-2 text-muted">ISBN: {{currentView.isbn}}</h6>
+        <p *ngIf="currentView.authors" class="card-text">Authors: {{currentView.authors}}</p>
+        <p *ngIf="currentView.noOfPages" class="card-text">No Of Pages: {{currentView.noOfPages}}</p>
+        <p *ngIf="currentView.publisher" class="card-text">Publisher: {{currentView.publisher}}</p>
+        <p *ngIf="currentView.country" class="card-text">Country: {{currentView.country}}</p>
+        <p *ngIf="currentView.mediaType" class="card-text">Media Type: {{currentView.mediaType}}</p>
+        <p *ngIf="currentView.released" class="card-text">Released On: {{currentView.released | date}}</p>
+        <p *ngIf="currentView.characters" class="card-text">Characters: {{currentView.characters}}</p>
+        <p *ngIf="currentView.povCharacters" class="card-text">Featured Characters: {{currentView.povCharacters}}</p>
+        <p class="text-muted">End of the Information</p>
+      </div>
+    </div>
+  </div>
+</div>

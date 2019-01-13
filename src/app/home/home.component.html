@@ -1,0 +1,44 @@
+<div style="padding-bottom:50px" class="row text-center" *ngIf="allBooks.length>0">
+  <h2 class="col-12 text-center">Books</h2>
+  <div class="mx-auto" *ngFor="let book of allBooks">
+    <div class="card" style="width: 18rem;">
+      <img src="https://juniperbooks.com/wp-content/uploads/2016/07/RHGM5-game-thrones-armor-front-1200.jpg" class="card-img-top"
+        alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{book.name | uppercase}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">By {{book.publisher}}</h6>
+      </div>
+    </div>
+  </div>
+  <button type="button" [routerLink]="['/books']" class="btn btn-link btn-lg btn-block">Show all Books</button>
+</div>
+<div style="padding-bottom:50px" class="row text-center" *ngIf="allHouses.length>0">
+  <h2 class="col-12 text-center">Houses</h2>
+  <div class="mx-auto" *ngFor="let house of allHouses">
+    <div class="card" style="width: 18rem;">
+      <img src="https://i.ebayimg.com/images/g/dIUAAOSwjIVaW1bm/s-l300.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{house.name | uppercase}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">At {{house.region}}</h6>
+      </div>
+    </div>
+  </div>
+  <button type="button" [routerLink]="['/houses']" class="btn btn-link btn-lg btn-block">Show all Houses</button>
+</div>
+<div style="padding-bottom:50px" class="row text-center" *ngIf="allCharacters.length>0">
+  <h2 class="col-12 text-center">Characters</h2>
+  <div class="mx-auto" *ngFor="let char of allCharacters">
+    <div class="card" style="width: 18rem;">
+      <img src="https://i.ytimg.com/vi/XdDziX5x030/maxresdefault.jpg" class="card-img-top" alt="...">
+      <div *ngIf="char.name.length!=''" class="card-body">
+        <h5 class="card-title">{{char.name | uppercase}}</h5>
+        <p class="card-text">{{char.gender}}</p>
+      </div>
+      <div *ngIf="char.name.length==''" class="card-body">
+        <h5 class="card-title">No Name</h5>
+        <p class="card-text">{{char.gender}}</p>
+      </div>
+    </div>
+  </div>
+  <button type="button" [routerLink]="['/characters']" class="btn btn-link btn-lg btn-block">Show all Characters</button>
+</div>

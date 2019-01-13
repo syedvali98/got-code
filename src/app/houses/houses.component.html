@@ -1,0 +1,31 @@
+<div class="input-group mb-3 col-6 mx-auto">
+  <input type="text" class="form-control" placeholder="Search" [(ngModel)]="houseName">
+  <div class="input-group-append">
+    <button class="btn btn-primary" (click)="searchHouse()">Search</button>
+  </div>
+</div>
+<div class="row" *ngIf="allHouses.length>0">
+  <div class="text-center mx-auto" *ngFor="let house of allHouses">
+    <div class="card" style="width: 18rem;">
+      <img src="https://i.ebayimg.com/images/g/dIUAAOSwjIVaW1bm/s-l300.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{house.name | uppercase}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">By {{house.region}}</h6>
+        <a [routerLink]="['/view',house.url]" class="card-link">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+<nav aria-label="...">
+  <ul class="pagination">
+    <li *ngIf="houseConst<=1" class="page-item disabled">
+      <a class="page-link" (click)="paginationPrev()">Previous</a>
+    </li>
+    <li *ngIf="houseConst>1" class="page-item">
+      <a class="page-link" (click)="paginationPrev()">Previous</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" (click)="paginationNext()">Next</a>
+    </li>
+  </ul>
+</nav>

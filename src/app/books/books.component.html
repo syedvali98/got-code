@@ -1,0 +1,36 @@
+<div class="input-group mb-3 col-6 mx-auto">
+  <input type="text" class="form-control" placeholder="Search" [(ngModel)]="bookName">
+  <div class="input-group-append">
+    <button class="btn btn-primary" (click)="searchBook()">Search</button>
+  </div>
+</div>
+<div class="row text-center" *ngIf="allBooks.length>0">
+  <div class="mx-auto" *ngFor="let book of allBooks">
+    <div class="card" style="width: 18rem;">
+      <img src="https://juniperbooks.com/wp-content/uploads/2016/07/RHGM5-game-thrones-armor-front-1200.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{book.name | uppercase}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">By {{book.publisher}}</h6>
+        <a [routerLink]="['/view',book.url]" class="card-link">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-12">
+  <div class="text-center">
+    <ul class="pagination">
+      <li *ngIf="bookConstant<=1" class="page-item disabled">
+        <a class="page-link" (click)="paginationPrev()">Previous</a>
+      </li>
+      <li *ngIf="bookConstant>1" class="page-item">
+        <a class="page-link" (click)="paginationPrev()">Previous</a>
+      </li>
+      <li *ngIf="bookConstant>=2" class="page-item disabled">
+        <a class="page-link" (click)="paginationNext()">Next</a>
+      </li>
+      <li *ngIf="bookConstant<2" class="page-item">
+        <a class="page-link" (click)="paginationNext()">Next</a>
+      </li>
+    </ul>
+  </div>
+</div>
