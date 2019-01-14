@@ -33,8 +33,8 @@ export class RequestService {
     return response;
   }
   public getParticularHouse(houseName){
-    let response = this.http.get(this.baseurl+'/house?name='+houseName);
-    console.log(this.baseurl+'/house?name='+houseName);
+    let response = this.http.get(this.baseurl+'/houses?name='+houseName);
+    console.log(this.baseurl+'/houses?name='+houseName);
     return response;
   }
   public getParticularCharacter(characterName){

@@ -1,9 +1,10 @@
 <div class="input-group mb-3 col-6 mx-auto">
   <input type="text" class="form-control" placeholder="Search" [(ngModel)]="bookName">
   <div class="input-group-append">
-    <button class="btn btn-primary" (click)="searchBook()">Search</button>
+    <button class="btn btn-dark" (click)="searchBook()">Search</button>
   </div>
 </div>
+<app-no-search-found *ngIf="allBooks.length==0"></app-no-search-found>
 <div class="row text-center" *ngIf="allBooks.length>0">
   <div class="mx-auto" *ngFor="let book of allBooks">
     <div class="card" style="width: 18rem;">
@@ -16,21 +17,26 @@
     </div>
   </div>
 </div>
-<div class="col-12">
-  <div class="text-center">
-    <ul class="pagination">
-      <li *ngIf="bookConstant<=1" class="page-item disabled">
-        <a class="page-link" (click)="paginationPrev()">Previous</a>
-      </li>
-      <li *ngIf="bookConstant>1" class="page-item">
-        <a class="page-link" (click)="paginationPrev()">Previous</a>
-      </li>
-      <li *ngIf="bookConstant>=2" class="page-item disabled">
-        <a class="page-link" (click)="paginationNext()">Next</a>
-      </li>
-      <li *ngIf="bookConstant<2" class="page-item">
-        <a class="page-link" (click)="paginationNext()">Next</a>
-      </li>
-    </ul>
+<div class="row">
+  <div class="col-md-5 col-sm-4"></div>
+  <div class="col-3">
+    <div *ngIf="pagination" style="padding:25px">
+      <div class="text-center">
+        <ul class="pagination">
+          <li *ngIf="bookConstant<=1" class="page-item disabled">
+            <a class="page-link" (click)="paginationPrev()">Previous</a>
+          </li>
+          <li *ngIf="bookConstant>1" class="page-item">
+            <a class="page-link" (click)="paginationPrev()">Previous</a>
+          </li>
+          <li *ngIf="bookConstant>=2" class="page-item disabled">
+            <a class="page-link" (click)="paginationNext()">Next</a>
+          </li>
+          <li *ngIf="bookConstant<2" class="page-item">
+            <a class="page-link" (click)="paginationNext()">Next</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ export class HousesComponent implements OnInit {
   public allHouses;
   public houseConst = 1;
   public houseName;
+  public pagination = true;
 
   constructor(public _request:RequestService) { }
 
@@ -50,6 +51,7 @@ export class HousesComponent implements OnInit {
     )
   }
   searchHouse(){
+    this.pagination = false;
     this.allHouses = this._request.getParticularHouse(this.houseName).subscribe(
 
       data =>{

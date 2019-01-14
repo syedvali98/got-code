@@ -1,9 +1,10 @@
 <div class="input-group mb-3 col-6 mx-auto">
   <input type="text" class="form-control" placeholder="Search" [(ngModel)]="characterName">
   <div class="input-group-append">
-    <button class="btn btn-primary" (click)="searchCharacter()">Search</button>
+    <button class="btn btn-dark" (click)="searchCharacter()">Search</button>
   </div>
 </div>
+<app-no-search-found *ngIf="allCharacters.length==0"></app-no-search-found>
 <div class="row" *ngIf="allCharacters.length>0">
   <div class="mx-auto" *ngFor="let char of allCharacters">
     <div class="card" style="width: 18rem;">
@@ -21,16 +22,21 @@
     </div>
   </div>
 </div>
-<nav aria-label="...">
-  <ul class="pagination">
-    <li *ngIf="charConst<=1" class="page-item disabled">
-      <a class="page-link" (click)="paginationPrev()">Previous</a>
-    </li>
-    <li *ngIf="charConst>1" class="page-item">
-      <a class="page-link" (click)="paginationPrev()">Previous</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" (click)="paginationNext()">Next</a>
-    </li>
-  </ul>
-</nav>
+<div class="row">
+  <div class="col-md-5 col-sm-4"></div>
+  <div class="col-3">
+    <nav *ngIf="pagination" aria-label="..." style="padding:25px;">
+      <ul class="pagination">
+        <li *ngIf="charConst<=1" class="page-item disabled">
+          <a class="page-link" (click)="paginationPrev()">Previous</a>
+        </li>
+        <li *ngIf="charConst>1" class="page-item">
+          <a class="page-link" (click)="paginationPrev()">Previous</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="paginationNext()">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

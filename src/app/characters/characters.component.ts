@@ -11,6 +11,7 @@ export class CharactersComponent implements OnInit {
   public allCharacters;
   public charConst = 1;
   public characterName;
+  public pagination = true;
 
   constructor(public _request:RequestService) { }
 
@@ -51,6 +52,7 @@ export class CharactersComponent implements OnInit {
     )
   }
   searchCharacter(){
+    this.pagination = false;
     this.allCharacters = this._request.getParticularCharacter(this.characterName).subscribe(
 
       data =>{
